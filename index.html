@@ -107,7 +107,7 @@
         $('#js-results').text(quotes_json[0]['phrase']);
         $jButton.click(
               function(objEvent){
-              var objConfig = $(this).data( "quotes" );
+              var objConfig = $(this).data("quotes");
               objConfig.Index = (objConfig.Index) % objConfig.Collection.length;
               $('#js-results').text(objConfig.Collection[ objConfig.Index++]['phrase']);
               });
