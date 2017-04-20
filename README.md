@@ -1,6 +1,6 @@
 # Site for the Mood
 
-[TODO. There will be project description]
+Сайт под настроение. В моем случае содержит слова песни, которые бесконечно крутятся у меня в голове. Почему бы им не материализоваться на специальной страничке? Вот [пример](https://bulbule.github.io/20_mood/index.html).
 
 # Project Goals
 
