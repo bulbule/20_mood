@@ -30,8 +30,8 @@
               <img src="pic.png" class="img-responsive center-block" width="400" >
             </div>
           <div>
-             <h2 id="results" class="text-center"></h2>
-              <button class="btn btn-link">еще</button>
+             <h2 id="js-results" class="text-center"></h2>
+              <js-button class="btn btn-link">еще</js-button>
           </div>
         </div>
         <footer class="footer">
@@ -94,30 +94,24 @@
       {
         "phrase": "Все хотят пить, но пьют только сок, хватит это терпеть!"
       }
-    ]
-    ;
-    $(
-      function printQuotes(){
-        var jButton = $( "button" );
-        jButton.data(
+    ];
+
+    $(function printQuotes(){
+        var $jButton = $("js-button");
+        $jButton.data(
                 "quotes",
                 {
-                    Index: 1,
-                    Collection: quotes_json
-                }
-                );
-        $('#results').text(quotes_json[0]['phrase'])
-        jButton.click(
-              function( objEvent ){
-              var jThis = $( this );
-              var objConfig = jThis.data( "quotes" );
-              objConfig.Index = (objConfig.Index) % objConfig.Collection.length
-              $('#results').text(objConfig.Collection[ objConfig.Index++]['phrase'])
-                }
-                );
-        }
-        );
-
+                  Index: 1,
+                  Collection: quotes_json
+                });
+        $('#js-results').text(quotes_json[0]['phrase']);
+        $jButton.click(
+              function(objEvent){
+              var objConfig = $(this).data( "quotes" );
+              objConfig.Index = (objConfig.Index) % objConfig.Collection.length;
+              $('#js-results').text(objConfig.Collection[ objConfig.Index++]['phrase']);
+              });
+        });
     </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
